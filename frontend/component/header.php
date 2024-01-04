@@ -14,70 +14,71 @@
     <script src="./frontend/src/js/script.js"></script>
   </head>
   <body>
-    <div class="row d-flex justify-content-center bg-light">
-        <div class="col-10">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">Olearing</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </ul>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle bord" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php
-                                if(empty($_SESSION["user_id"])){
-                                    ?>
-                                        Profile
-                                    <?php
-                                }else{
-                                    echo $_SESSION["username"];
-                                }
-                            ?>
+    <div class="row postition-relative d-flex justify-content-center bg-light">
+        <div class="row d-flex justify-content-center position-fixed bg-light" style="z-index: 100;">
+            <div class="col-10 bg-light">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.php">Olearing</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                         </button>
-                        <ul class="dropdown-menu">
-                            <?php
-                                if(empty($_SESSION["user_id"])){
-                                    ?>
-                                        <li><a class="dropdown-item" href="./login.php">Login</a></li>
-                                        <li><a class="dropdown-item" href="./register.php">Sign up</a></li>
-                                    <?php
-                                }else if($_SESSION["roleid"]==2){
-                                        ?>
-                                        <li><a class="dropdown-item" href="./dashboard.php">Dashboard</a></li>
-                                        <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
-                                        <?
-                                    ?>                                               
-                                    <?php
-                                }else{
-                                    ?>
-                                    <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
-                                    <?php
-                                }
-                            ?>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
                             
-                            
+                            <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
                         </ul>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle bord" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php
+                                    if(empty($_SESSION["user_id"])){
+                                        ?>
+                                            Profile
+                                        <?php
+                                    }else{
+                                        echo $_SESSION["username"];
+                                    }
+                                ?>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <?php
+                                    if(empty($_SESSION["user_id"])){
+                                        ?>
+                                            <li><a class="dropdown-item" href="./login.php">Login</a></li>
+                                            <li><a class="dropdown-item" href="./register.php">Sign up</a></li>
+                                        <?php
+                                    }else if($_SESSION["roleid"]==2){
+                                            ?>
+                                            <li><a class="dropdown-item" href="./dashboard.php">Dashboard</a></li>
+                                            <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
+                                            <?
+                                        ?>                                               
+                                        <?php
+                                    }else{
+                                        ?>
+                                        <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
+                                        <?php
+                                    }
+                                ?>
+                                
+                                
+                            </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        
+                </nav>
+            </div>
         </div>
     </div>

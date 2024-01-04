@@ -1,7 +1,7 @@
 <?php
     require_once('./frontend/component/header.php');
     require_once('./database/connection.php');
-    require('fcategory.php');
+    require('categoryController.php');
     require('showCourseController.php');
 ?>
 <div class="row">
@@ -105,11 +105,11 @@
                         if($course->num_rows>0){
                             while($row_course = $course->fetch_assoc()){
                                 ?>
-                                    <div class="col-3">
+                                    <div class="col-3 py-3">
                                         <div class="card">
                                             <img src="<?php echo $row_course["courseImagePath"];?>" alt="" class="carg-img-top" style="width: 100%; height:150px; min-height:150px;">
                                             <div class="card-body" style="min-height: 250px;">
-                                                <a class="card-title" href=""><?php echo $row_course["courseName"]; ?></a>
+                                                <a class="card-title" href="courseDetails.php?data=<?php echo urlencode($row_course['course_id']);?>"><?php echo $row_course["courseName"]; ?></a>
                                                 <p class="card-text">Ram Sendang</p>
                                                 <p><span>4.6</span>⭐⭐⭐⭐⭐</p>
                                                 <p class="card-text">$6.99</p>

@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="col-2 p-2">
-            <a class="card-title text-light text-decoration-none" href="#">OLearning</a>
+            <a class="card-title text-light text-decoration-none" href="index.php">OLearning</a>
           </div>
       </div>
       <div class="row bg-dark p-4 d-flex justify-content-end">

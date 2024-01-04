@@ -2,7 +2,7 @@
 session_start();
 require_once('./database/connection.php');
 require_once('showCourseController.php');
-require_once('fcategory.php');
+require_once('categoryController.php');
 $user_id = $_SESSION['user_id'];
 $result = getCourse($user_id, $conn);
 $result1 = getCourse($user_id, $conn);

@@ -1,6 +1,6 @@
 <?php
   // for displaying all the categories 
-  require_once('fcategory.php');
+  require_once('categoryController.php');
 ?>
 <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -55,7 +55,7 @@
     ---------------------------------
     --------------------------------->
     <div class="tab-pane fade" id="v-pills-addCategories" role="tabpanel" aria-labelledby="v-pills-addCategories-tab" tabindex="0">
-      <form class="row g-3 needs-validation" action="fcategory.php" method="post" novalidate>
+      <form class="row g-3 needs-validation" action="categoryController.php" method="post" novalidate>
           <div class="col-12">
               <label for="validationCustom01" class="form-label">Category Name</label>
               <input type="text" class="form-control" name="category" id="validationCustom01" required>
