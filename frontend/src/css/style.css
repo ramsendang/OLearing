@@ -1,0 +1,28 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.test-logo-css{
+    height: 80px;
+    width: 120px;
+}
+
+  
+  .tab {
+    cursor: pointer;
+  }
+  
+  .tab:hover {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.show {
+    display: flex;
+  }
+  
