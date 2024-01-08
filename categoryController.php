@@ -18,7 +18,7 @@
     }
 
     function getAllCourseByCategory($conn, $categoryid){
-        $sqlQuery = "SELECT course_id,courseName, courseDescription, courseImagePath, user_id, price FROM courses WHERE category_id = $categoryid";
+        $sqlQuery = "SELECT course_id, courseName, courseDescription, courseImagePath, user_id, price FROM courses WHERE category_id = $categoryid";
         $courseByCategory = $conn->query($sqlQuery);
         return $courseByCategory;
     }
