@@ -39,7 +39,7 @@
                                     if($nav_categories->num_rows>0){
                                         while($nav_row = $nav_categories->fetch_assoc()){
                                         ?>
-                                            <li><a class="dropdown-item" href="#"><?php echo $nav_row["categoryName"];?></a></li>
+                                            <li><a class="dropdown-item" href="courseByCategory.php?data=<?php echo urlencode($nav_row['id']);?>"><?php echo $nav_row["categoryName"];?></a></li>
                                         <?php
                                         }
                                     }else{
