@@ -2,7 +2,7 @@
 require_once('./frontend/component/header.php');
 require_once('courseDetailsController.php');
 ?>
-<div class="row bg-dark d-flex justify-content-center" style="margin-top: 33px;">
+<div class="row bg-dark d-flex justify-content-center" style="margin-top: 60px;">
     <div class="col-10">
         <div class="row">
             <div class="col-6">
@@ -12,7 +12,7 @@ require_once('courseDetailsController.php');
                 </p>
                 <p class="text-light">4.6 ⭐⭐⭐⭐⭐ <span>(490,659 rating)</span></p>
             </div>
-            <div class="col-4 d-flex justify-content-center position-fixed top-1 py-4 border border-primary bg-light" style="right: 80px;">
+            <div class="col-4 d-flex justify-content-center position-fixed top-1 py-4 border border-primary bg-light" style="right: 80px; z-index: 200;">
                 <div class="col-10">
                     <div class="row">
                         <div class="col">
@@ -21,8 +21,7 @@ require_once('courseDetailsController.php');
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3>£ <?php echo $row['price'] ?></h3>
-                            <a href="" class="btn btn-primary">Buy this course</a>
+                            <a href="courseVideo.php" class="btn btn-primary">Watch this Course</a>
                         </div>
                     </div>
                     <div class="row">
