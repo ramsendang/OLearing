@@ -35,11 +35,10 @@
                 ?>
                 <div class="col-lg-3 col-md-6 p-3">
                 <div class="card">
-                    <img src="<?php echo $course_row['courseImagePath']; ?>" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <a href="" class="card-title"><?php echo $course_row['courseName']?></a>
+                    <img src="<?php echo $course_row['courseImagePath']; ?>" alt="" class="card-img-top" style="height: 120px;">
+                    <div class="card-body d-flex flex-column justify-content-between" style="min-height: 250px;">
+                        <a href="courseDetails.php?data=<?php echo urlencode($course_row['course_id']);?>" class="card-title"><?php echo $course_row['courseName']?></a>
                         <p class="card-text"><?php echo $authorName['fullName'] ?></p>
-                        <p class="card-text"><?php echo $course_row['price']?></p>
                         <a href="courseDetails.php?data=<?php echo urlencode($course_row['course_id']);?>" class="btn btn-primary">Study Now</a>
                     </div>
                 </div>

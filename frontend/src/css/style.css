@@ -26,3 +26,28 @@
     display: flex;
   }
   
+
+  /* for star rating  */
+
+  .star_rating {
+    display: inline-block;
+    position: relative;
+  }
+
+
+
+.rating_label {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 33px; 
+}
+
+
+.rating_input:checked ~ label  {
+    color: #fdd835; /* Change color for selected stars */
+}
+

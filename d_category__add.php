@@ -1,6 +1,25 @@
 <?php 
 require_once('backend/component/header.php');
 require_once('backend/component/d_category__sidebar.php');
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $category = $_POST["category"];
+    $categoryDescription = $_POST["cDescription"];
+
+    if(empty($category)){
+        echo "Category is Required";
+    }else{
+        $Query = "INSERT INTO category (CategoryName, categoryDescription) VALUES ('$category', '$categoryDescription')";
+        if($conn->query($Query) === TRUE){
+            ?>
+            <script>
+                alert("Category Added Successfully!");
+            </script>
+            <?php
+        }else{
+            echo "Failed";
+        }
+    }
+}
 ?>
     <div class="col-10">
         <form id="category_form" class="row g-3 needs-validation" method="post" novalidate>
@@ -35,7 +54,7 @@ require_once('backend/component/d_category__sidebar.php');
 
                   // Make an AJAX request to a PHP script
                   $.ajax({
-                      url: 'categoryController.php', // Replace with your PHP script file
+                      url: 'd_category__add.php', // Replace with your PHP script file
                       method: 'POST',
                       data: formData,
                       success: function(response) {

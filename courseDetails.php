@@ -16,12 +16,12 @@ require_once('courseDetailsController.php');
                 <div class="col-10">
                     <div class="row">
                         <div class="col">
-                            <video src="<?php echo $row['videoPath']?>" class="border border-primary" style="height:180px; width: 100%;" controls></video>
+                            <img src="<?php echo $row['courseImagePath']?>" class="border border-primary" style="height:180px; width: 100%;"></video>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <a href="courseVideo.php" class="btn btn-primary">Watch this Course</a>
+                            <a href="courseVideo.php?data=<?php echo urlencode($row['course_id']);?>" class="btn btn-primary">Watch this Course</a>
                         </div>
                     </div>
                     <div class="row">
