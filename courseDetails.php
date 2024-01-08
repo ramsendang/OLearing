@@ -1,13 +1,14 @@
 <?php 
 require_once('./frontend/component/header.php');
+require_once('courseDetailsController.php');
 ?>
-<div class="row bg-dark d-flex justify-content-center" style="margin-top: 60px;">
+<div class="row bg-dark d-flex justify-content-center" style="margin-top: 33px;">
     <div class="col-10">
         <div class="row">
             <div class="col-6">
-                <h5 class="text-light">The Complete Python Bootcamp From Zero to Hero in Python</h5>
+                <h2 class="text-light"><?php echo $row['courseName']; ?></h2>
                 <p class="text-light">
-                    Learn Python like a Professional Start from the basics and go all the way to creating your own applications and games
+                    <?php echo $row['courseDescription']; ?>
                 </p>
                 <p class="text-light">4.6 ⭐⭐⭐⭐⭐ <span>(490,659 rating)</span></p>
             </div>
@@ -15,12 +16,12 @@ require_once('./frontend/component/header.php');
                 <div class="col-10">
                     <div class="row">
                         <div class="col">
-                            <video src="" class="border border-primary" style="height:140px; width: 200px;"></video>
+                            <video src="<?php echo $row['videoPath']?>" class="border border-primary" style="height:180px; width: 100%;" controls></video>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3>£ 9.99</h3>
+                            <h3>£ <?php echo $row['price'] ?></h3>
                             <a href="" class="btn btn-primary">Buy this course</a>
                         </div>
                     </div>
@@ -130,8 +131,11 @@ require_once('./frontend/component/header.php');
     <div class="col-10">
         <div class="row">
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <h4>Description</h4>
+                </div>
+                <div class="col">
+                    <p><?php echo $row['courseDescription'] ?></p>
                 </div>
             </div>
             <div class="row">

@@ -7,7 +7,7 @@ function getCourse($user_id, $conn){
 }
 
 function getCourseByCategory($course_id, $conn){
-    $selectQuery2 = "SELECT course_id, courseName,courseDescription, courseImagePath, price FROM courses WHERE category_id = $course_id";
+    $selectQuery2 = "SELECT course_id, courseName,courseDescription, courseImagePath, price FROM courses WHERE category_id = $course_id LIMIT 4";
     $courseByCategory = $conn->query($selectQuery2);
     return $courseByCategory;
 }

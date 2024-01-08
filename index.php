@@ -1,7 +1,6 @@
 <?php
     require_once('./frontend/component/header.php');
     require_once('./database/connection.php');
-    require('categoryController.php');
     require('showCourseController.php');
 ?>
 <div class="row">
@@ -112,7 +111,7 @@
                                                 <a class="card-title" href="courseDetails.php?data=<?php echo urlencode($row_course['course_id']);?>"><?php echo $row_course["courseName"]; ?></a>
                                                 <p class="card-text">Ram Sendang</p>
                                                 <p><span>4.6</span>⭐⭐⭐⭐⭐</p>
-                                                <p class="card-text">$6.99</p>
+                                                <p class="card-text">£ <?php echo $row_course['price']?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -134,15 +133,14 @@
         </div>
         <div class="row">
             <?php 
-                $categories2 = getAllCategories($conn);
+                $categories2 = getCategories($conn);
                 if($categories2->num_rows>0){
                     while($row_category = $categories2->fetch_assoc()){
                         ?>
                         <div class="col-3">
                             <div class="card my-2">
-                                <img src="" alt="" class="card-img-top">
                                 <div class="card-body">
-                                    <a href="" class="card-title text-decoration-none"><?php echo $row_category['categoryName'] ?></a>
+                                    <a href="courseByCategory.php?data=<?php echo urlencode($row_category['id']);?>" class="card-title text-decoration-none"><?php echo $row_category['categoryName'] ?></a>
                                 </div>
                             </div>
                         </div>

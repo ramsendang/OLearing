@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('categoryController.php');
 ?>
 
 <!doctype html>
@@ -26,14 +27,27 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                             </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                <?php 
+                                    $nav_categories = getAllCategories($conn);
+                                    if($nav_categories->num_rows>0){
+                                        while($nav_row = $nav_categories->fetch_assoc()){
+                                        ?>
+                                            <li><a class="dropdown-item" href="#"><?php echo $nav_row["categoryName"];?></a></li>
+                                        <?php
+                                        }
+                                    }else{
+                                        echo "failed";
+                                    }
+                                ?>
+                                    
+                                </ul>
                             </li>
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
