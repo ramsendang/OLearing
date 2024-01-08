@@ -43,7 +43,7 @@
             <div class="col-lg-3">
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <a class="nav-link text-light" aria-current="page" href="#">Terms</a>
+                  <a class="nav-link text-light" aria-current="page" href="./frontend/StaticPages/terms.php">Terms</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-light" href="#">Privacy Policy</a>
