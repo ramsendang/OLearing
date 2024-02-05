@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
         $course_id = $_POST['course_id'];
         $review = $_POST['review'];
         $rating = $_POST['rating'];
-        $sql = "INSERT INTO rating (course_id, rating, review, user_id) VALUES ($user_id, $rating, '$review', $user_id)";
+        $sql = "INSERT INTO rating (course_id, rating, review, user_id) VALUES ($course_id, $rating, '$review', $user_id)";
         if ($conn->query($sql) === TRUE) {
             ?>
                 <script>
@@ -33,8 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
         }
     }
 }else{
-    
+ 
 }
+
+$review = showReviewByCousreID($conn, $courseId);
 
 ?>
 <div class="container" style="margin-top:60px;">
@@ -57,8 +59,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
         <div class="col-6 p-">
             <div class="row">
                 <div class="col">
-                    <h5>Ram</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dignissimos quae enim cumque. Minus quam commodi praesentium eius consequuntur at.</p>
+                    <?php 
+                        if($review->num_rows>0){
+                            while($reviews = $review->fetch_assoc()){
+                        ?>
+                            <h5><?php echo userName($conn, $reviews['user_id'])?></h5>
+                            <p><?php echo $reviews['review']?></p>
+                            <p>at <?php echo $reviews['created_at']?></p>
+                            <hr>
+
+                        <?php
+                            }
+                        }
+                        else{
+                            echo "no reviews yet";
+                        }?>
                 </div>
             </div>
         </div>

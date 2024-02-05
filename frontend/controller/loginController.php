@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "SELECT id, fullName, user_password, role_id FROM user WHERE user_email='$email'";
+    $sql = "SELECT id, fullName, user_password, role_id, user_email, profileImgPath FROM user WHERE user_email='$email'";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
@@ -18,9 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["username"] = $row["fullName"];
             $_SESSION["roleid"] = $row["role_id"];
+            $_SESSION["email"] = $row["user_email"];
+            $_SESSION['profile'] = $row["profileImgPath"];
             ?>
             <script>
-                alert("Login Success");
                 <?php
                     if($row["role_id"]== 2){
                         ?>

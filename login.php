@@ -27,7 +27,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p>Are you new to this website? register <a href="./register.php">here</a></p>
+                        <p>Are you new to this website? register <a href="register.php">here</a></p>
                     </div>
                 </div>
                 <div class="col-12 d-flex">

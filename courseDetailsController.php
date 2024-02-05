@@ -9,6 +9,7 @@ if(isset($_GET['data'])){
         $row = $result->fetch_assoc();
     }
 }
+
 ?>
 
 

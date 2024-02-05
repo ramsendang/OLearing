@@ -1,6 +1,9 @@
 <?php 
 require_once('./frontend/component/header.php');
 require_once('courseDetailsController.php');
+require_once('reviewController.php');
+
+$review = showReviewByCousreID($conn, $row['course_id']);
 ?>
 <div class="row bg-dark d-flex justify-content-center" style="margin-top: 60px;">
     <div class="col-10">
@@ -139,27 +142,49 @@ require_once('courseDetailsController.php');
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="row">
+                    <h2>Reviews</h2>
+                </div>
+            </div>
+            <?php 
+                if($review->num_rows > 0){
+                    while($reviews = $review->fetch_assoc()){
+                        $rating = $reviews['rating'];
+                 
+            ?>
+            <div class="row">
+                
+                <div class="border border-black border-end-0 rounded col mb-4">
+                    <div class="row p-2">
                         <div class="col-4">
                             <div class="row">
-                                <div class="col-4">
-                                    profileimage
+                                <div class="col">
+                                    <img src="<?php 
+                                    echo userProfile($conn, $reviews['user_id']);
+                                    ?>" alt="profile image" 
+                                    style="height: 100px; widht: 100px;">
                                 </div>
-                                <div class="col-8">
-                                    <h3>Ram</h3>
-                                    <p>9 courses</p>
-                                    <p>2 reviews</p>
+                                <div class="col">
+                                    <h5><?php echo userName($conn, $reviews['user_id']);?></h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row p-2">
                         <div class="col-8 py-2">
-                            <p>⭐⭐⭐⭐⭐<span>3 years ago</span></p>
-                            Everything on this course is a goldmine except for the GUI since it's specific for Jupyter Notebooks and it's missing the video for GUI Events. Still it was a nice introduction to GUI. Don't let that disappoint you though. THIS IS A MUST HAVE COURSE. I have already recommended it to few people and always will. Do yourself a favor and do this course if you want to learn Python 3. Thank you so much for this course, Jose-sensei!!
+                            <p><?php 
+                                $i = 0;
+                                for($i=0; $i<$rating; $i++){
+                                    echo "⭐";
+                                }
+                            ?><span>3 years ago</span></p>
+                            <p><?php echo $reviews['review'];?></p>
                         </div>
                     </div>
                 </div>
+                <?php 
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

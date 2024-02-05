@@ -77,12 +77,14 @@
                                     }else if($_SESSION["roleid"]==2){
                                             ?>
                                             <li><a class="dropdown-item" href="./dashboard.php">Dashboard</a></li>
+                                            <li><a class="dropdown-item" href="./profile.php">Profile</a></li>
                                             <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
                                             <?
                                         ?>                                               
                                         <?php
                                     }else{
                                         ?>
+                                        <li><a class="dropdown-item" href="./profile.php">Profile</a></li>
                                         <li><a class="dropdown-item" href="./frontend/controller/logoutController.php">Log out</a></li>
                                         <?php
                                     }
