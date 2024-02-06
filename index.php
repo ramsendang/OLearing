@@ -15,22 +15,22 @@
         <div class="carousel-item active">
             <img src="./frontend/src/images/banner3.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>FlexLearn: Empower</h5>
+                <p>Unlock Your Potential, Anytime, Anywhere: Empowering Minds Through Online Learning</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="./frontend/src/images/banner2.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>SwiftStudy: Elevate</h5>
+                <p>Elevate Your Learning Experience: Seamless Education, Infinite Possibilities.</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="./frontend/src/images/banner1.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>LearnLink: Navigate</h5>
+                <p>Knowledge Knows No Boundaries: Navigate the Future with Our Online Learning Hub.</p>
             </div>
         </div>
     </div>
