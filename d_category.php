@@ -20,7 +20,7 @@ require_once('backend/component/d_category__sidebar.php');
                 <tr>
                     <th scope="row"><?php echo $row["id"]; ?></th>
                     <td><?php echo $row["categoryName"]; ?></td>
-                    <td><a href="" class="btn btn-danger">Delete</a></td>
+                    <td><a href="deleteCategory.php?data=<?php echo urlencode($row['id']);?>" class="btn btn-danger">Delete</a></td>
                 </tr>
                 <?php
                 }

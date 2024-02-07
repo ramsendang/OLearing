@@ -18,8 +18,8 @@
                             <h5 class="card-title"><?php echo $rows["courseName"];?></h5>
                             <p class="card-text"><?php echo $rows["courseDescription"];?></p>
                             <p class="card-text">£ <?php echo $rows["price"];?></p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">View</a>
+                            <a href="deleteCourse.php?data=<?php echo urlencode($rows['course_id']);?>" class="btn btn-primary">Delete</a>
+                            <a href="courseDetails.php?data=<?php echo urlencode($rows['course_id']);?>" class="btn btn-primary">View</a>
                         </div>
                     </div>
                 </div>

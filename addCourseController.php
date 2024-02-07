@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($conn->query($insertQuery) === TRUE) {
             ?>
             <script>
-                alert("Image uploaded and information stored in the database successfully!");
+                alert("Course added successfully!");
                 window.location.href ="dashboard.php";
             </script>
             <?php
