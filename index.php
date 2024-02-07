@@ -52,22 +52,22 @@
             <p class="text-center">Trusted by over 500 comapnies and hundreed of thousand around the world</p>
         </div>
         <div class="row p-4">
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/amazon.png" alt="" class="test-logo-css">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/facebook.png" alt="" class="test-logo-css">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/google.png" alt="" class="test-logo-css">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/microsoft.png" alt="" class="test-logo-css">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/udemy.png" alt="" class="test-logo-css"> 
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-12 d-flex align-items-center justify-content-center">
                 <img src="./frontend/src/images/testomonial/yahoo.png" alt="" class="test-logo-css">
             </div>
         </div>
@@ -104,7 +104,7 @@
                         if($course->num_rows>0){
                             while($row_course = $course->fetch_assoc()){
                                 ?>
-                                    <div class="col-3 py-3">
+                                    <div class="col-md-3 col-sm-6 py-3">
                                         <div class="card">
                                             <img src="<?php echo $row_course["courseImagePath"];?>" alt="" class="carg-img-top" style="width: 100%; height:150px; min-height:150px;">
                                             <div class="card-body" style="min-height: 250px;">
